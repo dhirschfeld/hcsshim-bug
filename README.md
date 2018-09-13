@@ -5,6 +5,6 @@ error described in https://github.com/moby/moby/issues/37821.
 
 This image can be built with:
 ```
-docker pull dhirschfeld/repro-base
-docker build --no-cache --force-rm -t repro .
+docker pull mcr.microsoft.com/windowsservercore-insider:10.0.17744.1001
+.\build.ps1
 ```

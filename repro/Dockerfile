@@ -1,6 +1,6 @@
 # escape=`
 
-FROM dhirschfeld/repro-base as oracle
+FROM repro-base as oracle
 SHELL ["powershell", "-Command", "$ErrorActionPreference='Stop'; $ProgressPreference='SilentlyContinue';"]
 COPY instantclient-basiclite-windows.x64-11.2.0.4.0.zip C:/
 COPY instantclient-odbc-windows.x64-11.2.0.4.0.zip C:/
@@ -8,7 +8,7 @@ RUN Expand-Archive -Path "C:/instantclient-basiclite-windows.x64-11.2.0.4.0.zip"
 RUN Expand-Archive -Path "C:/instantclient-odbc-windows.x64-11.2.0.4.0.zip" -DestinationPath "C:/oracle" -Force;
 
 
-FROM dhirschfeld/repro-base
+FROM repro-base
 COPY --from=oracle "C:/oracle" "C:/oracle"
 COPY r-essentials.txt C:/
 COPY msodbcsql_17.1.0.1_x64.msi C:/
