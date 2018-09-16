@@ -1,5 +1,5 @@
 
-FROM miniconda-core-1809
+FROM miniconda
 
 SHELL ["powershell", "-Command", "$ErrorActionPreference='Stop'; $ProgressPreference='SilentlyContinue';"]
 
